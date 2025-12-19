@@ -1,0 +1,130 @@
+.phone-section {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.brand-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.brand-tab {
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: 1px solid #e40046;
+  background: white;
+  color: #000000;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.brand-tab.active,
+.brand-tab:hover {
+  background: #e40046;
+  color: white;
+}
+
+.phone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.phone-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.phone-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.phone-card img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.phone-card:hover img {
+  transform: scale(1.05);
+}
+
+.phone-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.phone-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e40046;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  padding: 8px 20px;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  background: #c0003b;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+  .phone-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .phone-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brand-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* 👇 MOBILE SCROLL FIX */
+@media (max-width: 768px) {
+  .brand-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .brand-tab {
+    flex: 0 0 auto; /* prevent shrinking */
+  }
+
+  /* Optional: hide scrollbar (clean look) */
+  .brand-tabs::-webkit-scrollbar {
+    display: none;
+  }
+}
